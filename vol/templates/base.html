@@ -1,6 +1,6 @@
 <html lang="ja">
   <head>
-    <title>SportsLifeSite</title>
+    <title>test_blog</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,10 +9,17 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   </head>
   <body>
-    <div class="container">
-      <div class="header">
-        <h3 class="text-muted">Sample Page</h3>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="{{ url_for('main') }}">Main</a>
+          <a class="navbar-brand" href="{{ url_for('load_member_list') }}">メンバー一覧</a>
+          <a class="navbar-brand" href="{{ url_for('terms_of_service') }}">利用規約</a>
+      </nav>
+      <div class="jumbotron">
+          <h1>Flask ホームページ</h1>
       </div>
-    </div>
+      <div class="container">
+          {% block content %}
+          {% endblock %}
+      </div>
   </body>
 </html>
